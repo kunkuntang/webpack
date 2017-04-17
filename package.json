@@ -1,0 +1,34 @@
+{
+  "name": "xingkongus-webpack",
+  "version": "1.0.0",
+  "description": "a framework of webpack",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --devtool eval --progress --colors",
+    "deploy": "NODE_ENV=production webpack -p",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kunkuntang/webpack.git"
+  },
+  "keywords": [
+    "xingkongus"
+  ],
+  "author": "kuntang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kunkuntang/webpack/issues"
+  },
+  "homepage": "https://github.com/kunkuntang/webpack#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.0.0",
+    "babel-loader": "^6.0.0",
+    "babel-preset-es2015": "^6.0.0",
+    "css-loader": "^0.28.0",
+    "style-loader": "^0.16.1",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.2"
+  }
+}
