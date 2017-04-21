@@ -8,7 +8,13 @@
 </head>
 <body>
     this is home page
-    <a href="/">back</a>
+    <a id="goBack">back</a>
 </body>
-<script type="text/javascript" src="/dist/bundle1.js"></script>
+<!--<script type="text/javascript" src="/index.js"></script>-->
+<script type="text/javascript" src="/dist/home.js"></script>
+<script>
+    document.getElementById('goBack').onclick = function () {
+        window.history.back();
+    }
+</script>
 </html>

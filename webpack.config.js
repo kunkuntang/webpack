@@ -6,46 +6,35 @@ var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 console.log(path.resolve(__dirname, 'dist'))
 
 module.exports = {
-  
-  // 单文件配置
-  // entry: './index.js',
-  entry: [
-    'webpack/hot/dev-server',
-    'webpack-dev-server/client?http://localhost:8080',
-    './index.js'
-  ],
+    entry: 
+    {
+      index: './index.js',
+      home: './src/home/js/home.js',
+      about: './src/about/js/about.js'
+    }
+  ,
   output: {
-    // path: path.resolve(__dirname, 'dist'),
-    // publicPath: path.resolve(__dirname, 'dist'),
-    filename: './dist/bundle.js'
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/dist',
+    filename: '[name].js'
   },
-  // entry: [
-  //   {
-  //     bundle1: './src/js/home.js',
-  //     bundle2: './src/js/about.js'
-  //   },
-  //   'webpack/hot/dev-server',
-  //   'webpack-dev-server/client?http://localhost:8080'
-  // ],
-  // output: {
-  //   path: __dirname + './dist',
-  //   publicPath: __dirname + '/dist',
-  //   filename: '[name].js'
-  // },
   module: {
     loaders: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',//在webpack的module部分的loaders里进行配置即可
+        loader: 'babel-loader',   //在webpack的module部分的loaders里进行配置即可
         query: {
           presets: ['es2015']
         }
       },
       { 
         test: /\.css$/,
-        // use: ['style-loader', 'css-loader']
-        loader: 'style-loader!css-loader?root=../'
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.html$/,
+        loader: "raw-loader" // loaders: ['raw-loader'] is also perfectly acceptable.
       }
     ]
   },
@@ -54,10 +43,9 @@ module.exports = {
       compress: {
         warnings: false
       }
-    }),
-    new OpenBrowserPlugin({
-      url: 'http://localhost:8080'
-    }),
-    new webpack.HotModuleReplacementPlugin()
+    })
+    // new OpenBrowserPlugin({
+    //   url: 'http://localhost:8080'
+    // })
   ]
 }
