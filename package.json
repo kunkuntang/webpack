@@ -23,7 +23,9 @@
     "url": "https://github.com/kunkuntang/webpack/issues"
   },
   "homepage": "https://github.com/kunkuntang/webpack#readme",
-  "dependencies": {},
+  "dependencies": {
+    "raw-loader": "^0.5.1"
+  },
   "devDependencies": {
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
@@ -36,6 +38,7 @@
     "style-loader": "^0.16.1",
     "uglifyjs-webpack-plugin": "^0.4.3",
     "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.3",
     "webpack-merge": "^4.1.0"
   }
 }
