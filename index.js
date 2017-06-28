@@ -1,1 +1,2 @@
-document.write('<h1>Hello Home from indexjs</h1>');
+require('./index.html')
+document.write('<h1>Hello Home ggg from indexjs</h1>');
